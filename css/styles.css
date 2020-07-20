@@ -1,5 +1,6 @@
 body {
-	background: #04A1BF;
+	background: url("https://miro.medium.com/max/2560/1*Hrm5YjlBdYFZiUXmj7U1Sg.jpeg") no-repeat center center fixed;
+	background-size: cover;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -21,11 +22,11 @@ p {
 
 #first {
 	margin-top: 10px;
-	color: #FFCD5D;
+	color: orangered;
 }
 
 #second {
-	color: #51DF70;
+	color: white;
 
 }
 
@@ -105,4 +106,18 @@ input {
 
 .delete {
 	display: none;
+}
+
+footer h2 {
+	font-size: 1rem;
+    font-style: normal; 
+    color: superwhite(248, 246, 246, 0.479);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 5px;
+    color: gray;
+    background-color: rgba(56, 55, 55, 0.007);
+    text-align: center;
 }
