@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-	color: #ffffff;
+	color: orangered;
 	text-transform: uppercase;
 	font-weight: 800;
 }
@@ -22,16 +22,16 @@ p {
 
 #first {
 	margin-top: 10px;
-	color: orangered;
+	color: black;
 }
 
 #second {
-	color: white;
+	color: green;
 
 }
 
 #third {
-	color: #025F70;
+	color: red;
 	margin-bottom: 30px;
 }
 
@@ -52,7 +52,7 @@ p {
 
 #enter:hover{
 	background-color: #02798F;
-	color: #FFCD5D;
+	color: #f7f5f3;
 }
 
 ul {
