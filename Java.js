@@ -57,6 +57,20 @@ function addListAfterKeypress(event) {
 	} 
 }
 
+function makeFetch(weather) {
+	var url = 'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=Louisville,ky' + weather + '&apiKey=926ea2a6d4474d838091fd2e96217ef0';
+	var req = new Request(url);
+	return fetch(req)
+	  .then(function (response) {
+		return response.json();
+	  })
+	  .then(function (json) {
+		var articles = json.articles;
+		console.log(articles);
+		window.open(articles[0].url)
+	  })
+  }
+
 
 enterButton.addEventListener("click",addListAfterClick);
 

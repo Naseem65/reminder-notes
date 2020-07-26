@@ -91,6 +91,16 @@ li > button {
 	font-weight: 800;
 }
 
+button {
+	color: brown;
+	background-color: transparent;
+	position: flex;
+	border: 0;
+	font-weight: bold;
+	
+	
+}
+
 input {
 	border-radius: 5px;
 	min-width: 65%;
