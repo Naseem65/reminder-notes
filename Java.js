@@ -57,19 +57,19 @@ function addListAfterKeypress(event) {
 	} 
 }
 
-function makeFetch(weather) {
-	var url = 'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=Louisville,ky' + weather + '&apiKey=926ea2a6d4474d838091fd2e96217ef0';
-	var req = new Request(url);
-	return fetch(req)
-	  .then(function (response) {
-		return response.json();
-	  })
-	  .then(function (json) {
-		var articles = json.articles;
-		console.log(articles);
-		window.open(articles[0].url)
-	  })
-  }
+fetch("https://community-open-weather-map.p.rapidapi.com/climate/month?q=Louisville%252C%20KY", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+		"x-rapidapi-key": "e91b30c87cmshc1279cba0084b30p1e6206jsn424a7fcb87c0"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.log(err);
+});
 
 
 enterButton.addEventListener("click",addListAfterClick);
