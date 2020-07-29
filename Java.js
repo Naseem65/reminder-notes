@@ -44,7 +44,7 @@ function createListElement() {
 }
 
 
-function addListAfterClick(){
+function addListAfterClick() {
 	if (inputLength() > 0) { //makes sure that an empty input field doesn't create a li
 		createListElement();
 	}
@@ -57,21 +57,19 @@ function addListAfterKeypress(event) {
 	} 
 }
 
-fetch("https://community-open-weather-map.p.rapidapi.com/climate/month?q=Louisville%252C%20KY", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-		"x-rapidapi-key": "e91b30c87cmshc1279cba0084b30p1e6206jsn424a7fcb87c0"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
-
+function makeFetch(weather) {
+var url = "http://api.openweathermap.org/data/2.5/weather?q=Louisville,ky" + weather + "9ae4847cd12977edde56bfff008448cc";
+var req = new Request(url);
+return fetch(req)
+ .then(function (response) {
+	return response.json();
+ })
+ .then(function (json) {
+	 var cities = json.weather;
+	 window.open(weather[0].url)
+ })
+}
 
 enterButton.addEventListener("click",addListAfterClick);
 
-input.addEventListener("keypress", addListAfterKeypress);
+input.addEventListener("keypress",addListAfterKeypress);
