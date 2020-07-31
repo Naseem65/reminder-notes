@@ -57,8 +57,8 @@ function addListAfterKeypress(event) {
 	} 
 }
 
-function makeFetch(weather) {
-var url = "http://api.openweathermap.org/data/2.5/weather?q=Louisville,ky" + weather + "9ae4847cd12977edde56bfff008448cc";
+function getFetch(weather) {
+var url = 'http://api.openweathermap.org/data/2.5/weather?q=Louisville,ky' + weather + '&apiKey=9ae4847cd12977edde56bfff008448cc';
 var req = new Request(url);
 return fetch(req)
  .then(function (response) {
@@ -66,10 +66,24 @@ return fetch(req)
  })
  .then(function (json) {
 	 var cities = json.weather;
+	 console.log(weather);
 	 window.open(weather[0].url)
  })
 }
 
+function makeFetch(network) {
+	var url = 'http://newsapi.org/v2/top-headlines?country=us=' + network + '&apiKey=926ea2a6d4474d838091fd2e96217ef0';
+	var req = new Request(url);
+	return fetch(req)
+	  .then(function (response) {
+		return response.json();
+	  })
+	  .then(function (json) {
+		var articles = json.articles;
+		console.log(articles);
+		window.open(articles[0].url)
+	  })
+  }
 enterButton.addEventListener("click",addListAfterClick);
 
 input.addEventListener("keypress",addListAfterKeypress);
